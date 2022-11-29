@@ -1,0 +1,9 @@
+--- util/CMakeLists.txt
++++ util/CMakeLists.txt
+@@ -10,5 +10,5 @@
+ 
+ add_sources(read.cpp)
+ add_executable(read read.cpp)
+-target_link_libraries(read yaml-cpp)
++target_link_libraries(read yaml-cpp0.5)
+ set_target_properties(read PROPERTIES COMPILE_FLAGS "-std=c++11")
