@@ -24,7 +24,7 @@ ExternalProject_Add(yaml_cpp_src
                 patch -p0 < ${CMAKE_SOURCE_DIR}/extra_version_again.patch
   CONFIGURE_COMMAND cd ../yaml_cpp_src/ && cmake .
     -DCMAKE_INSTALL_PREFIX:PATH=${CATKIN_DEVEL_PREFIX}
-    -DBUILD_SHARED_LIBS=ON
+    -DBUILD_SHARED_LIBS=OFF
     ${BUILD_CONFIG}
   BUILD_COMMAND cd ../yaml_cpp_src/ && make -j 8
   INSTALL_COMMAND cd ../yaml_cpp_src/ && make install -j 8
@@ -32,7 +32,7 @@ ExternalProject_Add(yaml_cpp_src
 
 cs_add_library(${PROJECT_NAME} src/dependency_tracker.cc)
 add_dependencies(${PROJECT_NAME} yaml_cpp_src)
-target_link_libraries(${PROJECT_NAME} ${CATKIN_DEVEL_PREFIX}/lib/libyaml-cpp0.5${CMAKE_SHARED_LIBRARY_SUFFIX})
+target_link_libraries(${PROJECT_NAME} ${CATKIN_DEVEL_PREFIX}/lib/libyaml-cpp0.5${CMAKE_STATIC_LIBRARY_SUFFIX})
 
 cs_install()
 
