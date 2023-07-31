@@ -6,4 +6,4 @@
  add_executable(read read.cpp)
 -target_link_libraries(read yaml-cpp)
 +target_link_libraries(read yaml-cpp0.5)
- set_target_properties(read PROPERTIES COMPILE_FLAGS "-std=c++11")
+ set_target_properties(read PROPERTIES COMPILE_FLAGS "-std=c++17")
